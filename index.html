@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamun Aleyküm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Turuncu ve mavi karışımı şeffaf/gradyan arka plan */
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.8), rgba(0, 102, 255, 0.8)), 
+                        url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            position: relative;
+        }
+        /* Sağ üst köşedeki küçük fotoğraf */
+        .top-right-img {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .link-container {
+            margin: 20px 0;
+            word-break: break-all;
+        }
+        .link-container a {
+            color: #ffeb3b;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .link-container a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        .warning-text {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #ffcccc;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+        /* Giriş Ekranı Stilleri */
+        .intro-text {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .no-btn {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .no-btn:hover {
+            background-color: #c62828;
+            transform: scale(1.05);
+        }
+        /* Gizleme Sınıfı */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sağ Üst Köşedeki Fotoğraf -->
+    <img src="https://share.google/WeUVhdXghY0BgRnc4" alt="Logo" class="top-right-img">
+
+    <!-- İlk Karşılaşma / Soru Ekranı -->
+    <div id="intro-card" class="card">
+        <div class="intro-text">
+            Apoyu seviyor musun?
+        </div>
+        <div class="btn-container">
+            <button class="no-btn" onclick="revealMainContent()">Hayır</button>
+            <button class="no-btn" onclick="revealMainContent()">Hayır</button>
+        </div>
+    </div>
+
+    <!-- Asıl İçerik (Başlangıçta Gizli) -->
+    <div id="main-card" class="card hidden">
+        <h1>Selamun Aleyküm</h1>
+        <div class="link-container">
+            (<a href="https://youtu.be/8hS2Wmblkds?si=HyRK7zEG3C_fyzDr" target="_blank">https://youtu.be/8hS2Wmblkds?si=HyRK7zEG3C_fyzDr</a>)
+        </div>
+        <div class="warning-text">
+            Bu linke tıklamayan apocu.
+        </div>
+    </div>
+
+    <script>
+        function revealMainContent() {
+            // Soru kartını gizle
+            document.getElementById('intro-card').classList.add('hidden');
+            // Asıl kartı görünür yap
+            document.getElementById('main-card').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
